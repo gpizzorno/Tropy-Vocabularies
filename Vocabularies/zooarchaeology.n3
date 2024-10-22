@@ -1,0 +1,657 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns0: <http://erlangen-crm.org/current/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch>
+  a owl:Ontology ;
+  dc:title "Open Context Zooarchaeology Annotations"@en ;
+  rdfs:label "Open Context Zooarchaeology Annotations" ;
+  rdfs:comment "A simple vocabulary mainly for organizing zooarchaeological measurement data. The measurement concepts are mainly defined by von den Driesch 1976, since her guide to measurements are so widely used in zooarchaeology."^^xsd:string ;
+  cc:attributionName "Eric C. Kansa, Sarah W. Kansa (Open Context)"^^xsd:string ;
+  xhv:license "http://creativecommons.org/licenses/by/3.0/"^^xsd:anyURI ;
+  bibo:status "http://opencontext.org/about/publishing/#edit-stars-3"^^xsd:anyURI .
+
+xhv:license a owl:AnnotationProperty .
+cc:attributionName a owl:AnnotationProperty .
+bibo:status a owl:AnnotationProperty .
+skos:related a owl:AnnotationProperty .
+<http://opencontext.org/vocabularies/open-context-zooarch/has-fusion-char>
+  a owl:ObjectProperty ;
+  rdfs:label "Has fusion character"^^rdfs:Literal ;
+  rdfs:comment "Has bone fusion characterization. Describes a bone fusion stage."^^xsd:string ;
+  rdfs:range <http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization> ;
+  rdfs:subPropertyOf <http://erlangen-crm.org/current/P2_has_type> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/has-phys-sex-det>
+  a owl:ObjectProperty ;
+  rdfs:label "Has physiological sex determination"^^rdfs:Literal ;
+  rdfs:comment "Has an identication, with some degree of certainty, as to the physiological sex of an organism."^^xsd:string ;
+  rdfs:subPropertyOf <http://erlangen-crm.org/current/P2_has_type> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/has-anat-id>
+  a owl:ObjectProperty ;
+  rdfs:label "Has anatomical identification"^^rdfs:Literal ;
+  rdfs:comment "Has an identification (with some degree of certainty and confidence) to a specific anatomical structure. For zooarchaeology, this usually means an identification to a bone element"^^xsd:string ;
+  rdfs:subPropertyOf <http://erlangen-crm.org/current/P2_has_type> .
+
+<http://erlangen-crm.org/current/P2_has_type> a owl:ObjectProperty .
+<http://opencontext.org/vocabularies/open-context-zooarch/B>
+  a owl:Class ;
+  rdfs:label "B"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas> ;
+  rdfs:comment "Breadth of the middle of the diaphysis"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BF>
+  a owl:Class ;
+  rdfs:label "BF"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas> ;
+  rdfs:comment "Breadth of the Facies articularis"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BFd>
+  a owl:Class ;
+  rdfs:label "BFd"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas> ;
+  rdfs:comment "(Greatest) breadth of the Facies articularis distalis. Measured in the same plane as Bd. Only in equids and ruminants."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BFp>
+  a owl:Class ;
+  rdfs:label "BFp"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-2-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas> ;
+  rdfs:comment "(Greatest) breadth of the Facies articularis proximalis (humeral articular surface). Measured in the same plane as Bp. Ony in equids and ruminants."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BG>
+  a owl:Class ;
+  rdfs:label "BG"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Breadth of the glenoid cavity - Greatest breadth of the glenoid angle."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BPC>
+  a owl:Class ;
+  rdfs:label "BPC"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/ulna-meas> ;
+  rdfs:comment "(Greatest) breadth across the coronoid process = greatest breadth of the proximal articular surface"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BT>
+  a owl:Class ;
+  rdfs:label "BT"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas> ;
+  rdfs:comment "(Greatest) breadth of the trochlea, only in equids and ruminants. The trochlea is measured in the middle from the cranial side including the outer borders of both the lateral and the medial condyle. (See: von den Driesch 1976: 76-77)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BTr>
+  a owl:Class ;
+  rdfs:label "BTr"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas> ;
+  rdfs:comment "(Greatest) breadth of the region of the Trochanter tertius. Only in lagomorphs to be measred in parallel to the Bp!"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Bd>
+  a owl:Class ;
+  rdfs:label "Bd"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-2-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas> ;
+  rdfs:comment "(Greatest) breadth of the distal end (See: von den Driesch 1976: 76-77)."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Bp>
+  a owl:Class ;
+  rdfs:label "Bp"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-2-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas> ;
+  rdfs:comment "(Greatest) breadth of the proximal end. Not in canids or lago-morphs (See: von den Driesch 1976: 76-77)."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/CD>
+  a owl:Class ;
+  rdfs:label "CD"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas> ;
+  rdfs:comment "(Smallest) circumference of the diaphysis. In general only in horses, where this measurement serves well to denote proportions"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/DC>
+  a owl:Class ;
+  rdfs:label "DC"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas> ;
+  rdfs:comment "(Greatest) depth of the Caput femoris"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/DD>
+  a owl:Class ;
+  rdfs:label "DD"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas> ;
+  rdfs:comment "(Smallest) depth of the diaphysis"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/DHA>
+  a owl:Class ;
+  rdfs:label "DHA"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Diagonal height (see defintions for linear measurements in von den Driesch 1976:14) from the most distal point of the scapula to the thoracic angle."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/DLS>
+  a owl:Class ;
+  rdfs:label "DLS"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas> ;
+  rdfs:comment "Greatest diagonal length of the sole"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/DPA>
+  a owl:Class ;
+  rdfs:label "DPA"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/ulna-meas> ;
+  rdfs:comment "Depth across the Processus anconaeus. One measures the shortest distance from the Procesus anonaeus to the caudal border of the ulna."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Dd>
+  a owl:Class ;
+  rdfs:label "Dd"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas> ;
+  rdfs:comment "(Greatest) depth of the distal end. Ususually measured only in equids and lagomorphs"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Dl>
+  a owl:Class ;
+  rdfs:label "Dl"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas> ;
+  rdfs:comment "Greatest depth of the lateral half"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Dm>
+  a owl:Class ;
+  rdfs:label "Dm"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas> ;
+  rdfs:comment "Greatest depth of the medial half"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Dp>
+  a owl:Class ;
+  rdfs:label "Dp"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-2-meas> ;
+  rdfs:comment "Depth of the proximal end"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GB>
+  a owl:Class ;
+  rdfs:label "GB"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/calcaneus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tarsal-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/atlas-meas> ;
+  rdfs:comment "Greatest breadth"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GBA>
+  a owl:Class ;
+  rdfs:label "GBA"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Greatest breadth across the acetabula"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GBTc>
+  a owl:Class ;
+  rdfs:label "GBTc"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Greatest breadth across the Tubera coxarum = greatest breadth across the lateral angle"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GBTi>
+  a owl:Class ;
+  rdfs:label "GBTi"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Greatest breadth across the Tubera ischiadica"^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GH>
+  a owl:Class ;
+  rdfs:label "GH"^^rdfs:Literal ;
+  owl:equivalentClass <http://opencontext.org/vocabularies/open-context-zooarch/GL> ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas> ;
+  rdfs:comment "Greatest height (= length)."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GL>
+  a owl:Class ;
+  rdfs:label "GL"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/calcaneus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-2-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/ulna-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/atlas-meas> ;
+  rdfs:comment """Greatest Length (GL) as defined by von den Driesch (1976). This measure should not be used for all bone elements, since it can be ambiguous depending on the specifics of a given bone element's morphology.
+"""^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GLC>
+  a owl:Class ;
+  rdfs:label "GLC"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas> ;
+  rdfs:comment "Greatest Length from caput (head) (See: von den Driesch 1976: 76-77)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GLP>
+  a owl:Class ;
+  rdfs:label "GLP"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Greatest length of the Processus articularis (glenoid process)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GLl>
+  a owl:Class ;
+  rdfs:label "GLl"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas> ;
+  rdfs:comment "Greatest length of the lateral part (See: von den Driesch 1976: 76-77)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GLm>
+  a owl:Class ;
+  rdfs:label "GLm"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas> ;
+  rdfs:comment "Greatest length of the medial half"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GLpe>
+  a owl:Class ;
+  rdfs:label "GLpe"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas> ;
+  rdfs:comment "Greatest length of the peripheral (abaxial) half. Most of the anterior first phalanges of Bos re formed in such a manner that the proximodorsal and the proximovolar prominent parts of the perupheral section of the proximal rticular surface can serve s fixed points for one of the callipers."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/HP>
+  a owl:Class ;
+  rdfs:label "HP"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas> ;
+  rdfs:comment "Height in the region of the extensor process (measuring box!)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/HS>
+  a owl:Class ;
+  rdfs:label "HS"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Height (see definitions of linear measurements von den Driesch 1976:14) along the spine"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LA>
+  a owl:Class ;
+  rdfs:label "LA"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Length of the acetabulum including the lip."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LAR>
+  a owl:Class ;
+  rdfs:label "LAR"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Length of the acetabulum on the rim"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LF>
+  a owl:Class ;
+  rdfs:label "LF"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas> ;
+  rdfs:comment "Length of the Facies articularis (articular surface)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LFo>
+  a owl:Class ;
+  rdfs:label "LFo"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Inner length of the foramen obturatum"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LG>
+  a owl:Class ;
+  rdfs:label "LG"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Length of the glenoid cavity."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LO>
+  a owl:Class ;
+  rdfs:label "LO"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/ulna-meas> ;
+  rdfs:comment "Length of the olecranon. Only in ruminants"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LS>
+  a owl:Class ;
+  rdfs:label "LS"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Length of the symphysis. Only measured when the two halves have fused."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Ld>
+  a owl:Class ;
+  rdfs:label "Ld"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Length of the dorsal surface"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LeP>
+  a owl:Class ;
+  rdfs:label "LeP"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas> ;
+  rdfs:comment "Length, excepting the plantar projection"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Ll>
+  a owl:Class ;
+  rdfs:label "Ll"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas> ;
+  rdfs:comment "Length of the lateral part"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LmT>
+  a owl:Class ;
+  rdfs:label "LmT"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas> ;
+  rdfs:comment "Length of the medial part of the Trochlea tali"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/MBS>
+  a owl:Class ;
+  rdfs:label "MBS"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas> ;
+  rdfs:comment "Middle breadth of the sole = breadth in the middle of the sole"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/PL>
+  a owl:Class ;
+  rdfs:label "PL"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas> ;
+  rdfs:comment "Physiological length. Applies to horses, where one measures in the longitudinal axis of the bone from the proximal articular surface to the distal articular surfac."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SB>
+  a owl:Class ;
+  rdfs:label "SB"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Smallest breadth of the shaft of ilium"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SBI>
+  a owl:Class ;
+  rdfs:label "SBI"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Smallest breadth across the bodies of the ischia"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SC>
+  a owl:Class ;
+  rdfs:label "SC"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Smallest circumference of the shaft of ilium"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SD>
+  a owl:Class ;
+  rdfs:label "SD"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/femur-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/phalanx-2-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/radius-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas> ;
+  rdfs:comment "Smallest breadth of the diaphysis (See: von den Driesch 1976: 76-77)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SDO>
+  a owl:Class ;
+  rdfs:label "SDO"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/ulna-meas> ;
+  rdfs:comment "Smallest depth of the olecranon. Cannot be accurately measured in bears."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SH>
+  a owl:Class ;
+  rdfs:label "SH"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas> ;
+  rdfs:comment "Smallest height of the haft of ilium"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SLC>
+  a owl:Class ;
+  rdfs:label "SLC"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Smallest length of the Collum scapulae (neck of the scapula)."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/anatomical-meas>
+  a owl:Class ;
+  rdfs:label "Anatomical measurement"^^rdfs:Literal ;
+  rdfs:comment "A measurement of an anamical entity. In zooarchaeology, these are usually bone elements."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/astragalus-talus-meas>
+  a owl:Class ;
+  rdfs:label "astragalus (talus) measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/calcaneus-meas>
+  a owl:Class ;
+  rdfs:label "calcaneus measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/dist-epi-fused>
+  a owl:Class ;
+  rdfs:label "Distal epiphysis fused"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization> ;
+  rdfs:comment "The distal epiphysis is fully fused to the shaft, with no fusion line visible at the metaphysis."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/dist-epi-unfused>
+  a owl:Class ;
+  rdfs:label "Distal epiphysis unfused"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization> ;
+  rdfs:comment "The distal epiphysis is not fused to the shaft. The epiphysis and the shaft are completely separated. The specimen is either the unfused distal epiphysis, the unfused shaft, or portions of both that are not attached to each other."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/dist-epi-fusing>
+  a owl:Class ;
+  rdfs:label "Distal epiphysis fusing"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization> ;
+  rdfs:comment """The distal epiphysis is in the process of fusing. A fusion
+line is still visible at the metaphysis, but the epiphysis and the shaft
+cannot be separated manually."""^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/femur-meas>
+  a owl:Class ;
+  rdfs:label "femur measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization>
+  a owl:Class ;
+  rdfs:label "Fusion characterization"^^rdfs:Literal ;
+  rdfs:comment "These classes are used to describe the epiphyseal charateristics of bone elements."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas>
+  a owl:Class ;
+  rdfs:label "humerus measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/other-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas>
+  a owl:Class ;
+  rdfs:label "Von den Driesch (1976) Bone Measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/anatomical-meas> ;
+  rdfs:comment "A length distance measure for an anatomic element, usuallly defined as the distance between two clearly identified anatomic structures. These measurements were defined by Von den Driesch (1976)."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/metapodial-meas>
+  a owl:Class ;
+  rdfs:label "metapodial measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/pelvis-meas>
+  a owl:Class ;
+  rdfs:label "pelvis measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/phalanx-1-meas>
+  a owl:Class ;
+  rdfs:label "phalanx 1 measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/phalanx-2-meas>
+  a owl:Class ;
+  rdfs:label "phalanx 2 measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/phalanx-3-meas>
+  a owl:Class ;
+  rdfs:label "phalanx 3 measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/prox-epi-fused>
+  a owl:Class ;
+  rdfs:label "Proximal epiphysis fused"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization> ;
+  rdfs:comment "The proximal epiphysis is fully fused to the shaft, with no fusion line visible at the metaphysis."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/prox-epi-unfused>
+  a owl:Class ;
+  rdfs:label "Proximal epiphysis unfused"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization> ;
+  rdfs:comment "The proximal epiphysis is not fused to the shaft. The epiphysis and the shaft are completely separated. The specimen is either the unfused distal epiphysis, the unfused shaft, or portions of both that are not attached to each other."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/prox-epi-fusing>
+  a owl:Class ;
+  rdfs:label "Proximal epiphysis fusing"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/fusion-characterization> ;
+  rdfs:comment "The proximal epiphysis is in the process of fusing. A fusion line is still visible at the metaphysis, but the epiphysis and the shaft cannot be separated manually."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/radius-meas>
+  a owl:Class ;
+  rdfs:label "radius measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas>
+  a owl:Class ;
+  rdfs:label "scapula measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/tarsal-meas>
+  a owl:Class ;
+  rdfs:label "tarsal measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/tibia-meas>
+  a owl:Class ;
+  rdfs:label "tibia measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/ulna-meas>
+  a owl:Class ;
+  rdfs:label "ulna measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/tibiotarsus-meas>
+  a owl:Class ;
+  rdfs:label "tibiotarsus measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Dip>
+  a owl:Class ;
+  rdfs:label "Dip"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/tibiotarsus-meas> ;
+  rdfs:comment "Greatest diagonal of the proximal end: from the Condylus medialis femoralis to the Crista lateralis, even though in some species the distance from the Condylus medialis femoralis to the Crista tibia is greater. See pages 126-127."^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/Dic>
+  a owl:Class ;
+  rdfs:label "Dic"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/scapula-meas> ;
+  rdfs:comment "Greatest cranial diagonal (for birds, see page: 115)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/malleolus-meas>
+  a owl:Class ;
+  rdfs:label "malleolus measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/GD>
+  a owl:Class ;
+  rdfs:label "GD"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/malleolus-meas> ;
+  rdfs:comment "Greatest Depth"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/axis-meas>
+  a owl:Class ;
+  rdfs:label "axis measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/SBV>
+  a owl:Class ;
+  rdfs:label "SBV"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas> ;
+  rdfs:comment "Smallest breadth of the vertebra"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/other-meas>
+  a owl:Class ;
+  rdfs:label "Other measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/anatomical-meas> ;
+  rdfs:comment "This is currently a \"catch-all\" class for standard measurements not originally defined by Von den Driesch (1976)."^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/HT>
+  a owl:Class ;
+  rdfs:label "HT"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/humerus-meas> ;
+  rdfs:comment "(Greatest) Height of the trochlea"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/H>
+  a owl:Class ;
+  rdfs:label "H"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/atlas-meas> ;
+  rdfs:comment "(Greatest) Height"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LCDe>
+  a owl:Class ;
+  rdfs:label "LCDe"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas> ;
+  rdfs:comment "Greatest length in the region of the corpus (body) including the dens"^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LAPa>
+  a owl:Class ;
+  rdfs:label "LAPa"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas> ;
+  rdfs:comment "Greatest length of the arch including the Processus articulares caudales"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/atlas-meas>
+  a owl:Class ;
+  rdfs:label "atlas measurement"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/von-den-driesch-bone-meas> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BFcr>
+  a owl:Class ;
+  rdfs:label "BFcr"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/atlas-meas> ;
+  rdfs:comment "(Greatest) breadth of the Facies articularis cranialis (cranial articular surface)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BFcd>
+  a owl:Class ;
+  rdfs:label "BFcd"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas>, <http://opencontext.org/vocabularies/open-context-zooarch/atlas-meas> ;
+  rdfs:comment "(Greatest) breadth of the Facies articularis caudalis (caudal articular surface)"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/LAd>
+  a owl:Class ;
+  rdfs:label "LAd"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/atlas-meas> ;
+  rdfs:comment "Length of the Arcus dorsalis (dorsal arch), median. [Note: measured only in carnivores. Von den Driesch (1976): 67]"^^xsd:string .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BPacd>
+  a owl:Class ;
+  rdfs:label "BPacd"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas> ;
+  rdfs:comment "(Greatest) breadth of the Processus articulares caudales"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+<http://opencontext.org/vocabularies/open-context-zooarch/BPtr>
+  a owl:Class ;
+  rdfs:label "BPtr"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/open-context-zooarch/axis-meas> ;
+  rdfs:comment "(Greatest) breadth across the Processus transversi"^^xsd:string ;
+  ns0:P91_has_unit <https://www.wikidata.org/wiki/Q174789> .
+
+ns0:E54_Dimension
+  rdfs:label "Dimension (E54)"^^rdfs:Literal ;
+  rdfs:comment "Concept from the CIDOC-CRM"^^xsd:string .

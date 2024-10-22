@@ -1,0 +1,381 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix ns0: <http://purl.org/ontology/olo/core#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<http://opencontext.org/vocabularies/dinaa>
+  a owl:Ontology ;
+  dc:title "Digital Index of North American Archaeology Vocabulary"@en ;
+  rdfs:label "Digital Index of North American Archaeology Vocabulary"^^rdfs:Literal ;
+  cc:attributionName "Joshua Wells, David G. Anderson, Stephen Yerka, Sarah Whitcher Kansa, Eric C. Kansa"^^xsd:string ;
+  rdfs:comment """This ontology supports integration of data compiled by different State Historical Preservation Offices (SHPOs) for the Digital Index of North American Archaeology (DINAA) project (see: http://ux.opencontext.org/blog/archaeology-site-data/)
+
+It was developed through support from the National Science Foundation (Grants: NSF #1216810 and #1217240)."""^^xsd:string ;
+  xhv:license "http://creativecommons.org/licenses/by/3.0/"^^xsd:anyURI .
+
+<http://purl.org/ontology/olo/core#index>
+  a owl:AnnotationProperty ;
+  rdfs:label "Index"@en ;
+  rdfs:comment "Used for sorting lists."^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00001>
+  a owl:ObjectProperty ;
+  rdfs:label "Has period"^^rdfs:Literal ;
+  rdfs:comment "Has an assignment or identification with a given chronological / cultural period."^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00002>
+  a owl:Class ;
+  rdfs:label "Period"^^rdfs:Literal ;
+  owl:equivalentClass <http://www.cidoc-crm.org/cidoc-crm/E4_Period> ;
+  rdfs:comment "This class has archaeological or historicial periods, alternately loosely defined cultural groups."^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00003>
+  a owl:Class ;
+  rdfs:label "Investigation level"^^rdfs:Literal ;
+  rdfs:comment "This class describes the overall intensity of research and documentation on an archaeological or historical ressource"^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00004>
+  a owl:Class ;
+  rdfs:label "Paleoindian"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 0 ;
+  rdfs:comment "Period which contains American archaeological cultures of the Pleistocene."^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00005>
+  a owl:Class ;
+  rdfs:label "Clovis"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00004> ;
+  ns0:index 1 ;
+  rdfs:comment "Clovis is a Paleoindian culture starting about 11,500 BCE and ending about 9,500 BCE."^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00006>
+  a owl:Class ;
+  rdfs:label "Folsom"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00004> ;
+  ns0:index 4 ;
+  rdfs:comment "Folsom is a Paleoindian culture starting about 9,000 BCE and ending about 8,000 BCE."^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00007>
+  a owl:Class ;
+  rdfs:label "Archaic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 1 .
+
+<http://opencontext.org/vocabularies/dinaa/00008>
+  a owl:Class ;
+  rdfs:label "Woodland"^^rdfs:Literal ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 2 ;
+  rdfs:comment "Widespread appearance of ceramics, from the Great Plains to the Atlantic seaboad. (3200 - 1000 BP)"^^xsd:string .
+
+<http://opencontext.org/vocabularies/dinaa/00011>
+  a owl:Class ;
+  rdfs:label "Early Paleoindian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00004> ;
+  ns0:index 2 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00012>
+  a owl:Class ;
+  rdfs:label "Late Paleoindian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00004> ;
+  ns0:index 5 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00013>
+  a owl:Class ;
+  rdfs:label "Late Paleoindian / Early Archaic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00004> ;
+  ns0:index 6 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00014>
+  a owl:Class ;
+  rdfs:label "Late Archaic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00007> ;
+  ns0:index 3 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00015>
+  a owl:Class ;
+  rdfs:label "Middle / Late Archaic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00007> ;
+  ns0:index 2 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00016>
+  a owl:Class ;
+  rdfs:label "Terminal Late Archaic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00007> ;
+  ns0:index 4 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00017>
+  a owl:Class ;
+  rdfs:label "Late Archaic / Early Woodland"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00007> ;
+  ns0:index 5 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00018>
+  a owl:Class ;
+  rdfs:label "Early Woodland"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00008> ;
+  ns0:index 0 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00019>
+  a owl:Class ;
+  rdfs:label "Middle Woodland"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00008> ;
+  ns0:index 1 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00020>
+  a owl:Class ;
+  rdfs:label "Late Woodland"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00008> ;
+  ns0:index 2 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00021>
+  a owl:Class ;
+  rdfs:label "Terminal Middle Woodland"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00008> ;
+  ns0:index 3 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00022>
+  a owl:Class ;
+  rdfs:label "Late Woodland / Mississippian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00008> ;
+  ns0:index 4 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00023>
+  a owl:Class ;
+  rdfs:label "Mississippian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00024> ;
+  ns0:index 0 .
+
+<http://opencontext.org/vocabularies/dinaa/00024>
+  a owl:Class ;
+  rdfs:label "Late Prehistoric"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 3 ;
+  rdfs:comment "This Late Prehistoric period is a container class for more specific cultural categories. This instance of Late Prehistoric should not be assigned to an archaeological site. Instead use the Late Prehistoric subclass of this entry." .
+
+<http://opencontext.org/vocabularies/dinaa/00025>
+  a owl:Class ;
+  rdfs:label "Protohistoric"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 5 .
+
+<http://opencontext.org/vocabularies/dinaa/00026>
+  a owl:Class ;
+  rdfs:label "Contact Period"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 5, 6 .
+
+<http://opencontext.org/vocabularies/dinaa/00027>
+  a owl:Class ;
+  rdfs:label "Historic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 7 .
+
+<http://opencontext.org/vocabularies/dinaa/00028>
+  a owl:Class ;
+  rdfs:label "Prehistoric Undifferentiated"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 4 ;
+  rdfs:comment "Generic culture history abstract class used for archaeological sites defined by investigators as relating to a particular period, but without naming any specific cultures." .
+
+<http://opencontext.org/vocabularies/dinaa/00029>
+  a owl:Class ;
+  rdfs:label "Middle Mississippian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00023> ;
+  ns0:index 1 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00030>
+  a owl:Class ;
+  rdfs:label "Upper Mississippian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00023> ;
+  ns0:index 3 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00031>
+  a owl:Class ;
+  rdfs:label "19th Century"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00027> ;
+  ns0:index 0 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00032>
+  a owl:Class ;
+  rdfs:label "20th Century"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00027> ;
+  ns0:index 1 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00033>
+  a owl:Class ;
+  rdfs:label "21st Century"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00027> ;
+  ns0:index 2 ;
+  rdfs:comment "Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00034>
+  a owl:Class ;
+  rdfs:label "Adena"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00018> ;
+  ns0:index 0 ;
+  rdfs:comment "Adena is an Early Woodland culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00035>
+  a owl:Class ;
+  rdfs:label "African American"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00027> ;
+  ns0:index 3 ;
+  rdfs:comment "African American is a Historic cultural definiton. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00036>
+  a owl:Class ;
+  rdfs:label "Albee"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00020> ;
+  ns0:index 0 ;
+  rdfs:comment "Albee is a Late Woodland Culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00037>
+  a owl:Class ;
+  rdfs:label "Allson LaMotte"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00020> ;
+  ns0:index 1 ;
+  rdfs:comment "Allison LaMotte is a Late Woodland culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00038>
+  a owl:Class ;
+  rdfs:label "Angel"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00029> ;
+  ns0:index 0 ;
+  rdfs:comment "Angel is a Middle Mississippian culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00039>
+  a owl:Class ;
+  rdfs:label "Early Archaic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00007> ;
+  ns0:index 0 .
+
+<http://opencontext.org/vocabularies/dinaa/00040>
+  a owl:Class ;
+  rdfs:label "Big Sandy"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00039> ;
+  ns0:index 0 ;
+  rdfs:comment "Big Sandy is an Early Archaic culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00041>
+  a owl:Class ;
+  rdfs:label "Middle Archaic"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00007> ;
+  ns0:index 1 ;
+  rdfs:comment "" .
+
+<http://opencontext.org/vocabularies/dinaa/00042>
+  a owl:Class ;
+  rdfs:label "Bluegrass"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00014> ;
+  ns0:index 0 ;
+  rdfs:comment "Bluegrass is a site with Middle Archaic to Late Archaic cultures. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00043>
+  a owl:Class ;
+  rdfs:label "Brems"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00020> ;
+  ns0:index 2 ;
+  rdfs:comment "Brems is a Late Woodland culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00044>
+  a owl:Class ;
+  rdfs:label "Caborn Welborn"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00029> ;
+  ns0:index 1 ;
+  rdfs:comment "Caborn Welborn is a Middle Mississippian culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00045>
+  a owl:Class ;
+  rdfs:label "Crab Orchard"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00019> ;
+  ns0:index 0 ;
+  rdfs:comment "Crab Orchard is a Middle Woodland culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00046>
+  a owl:Class ;
+  rdfs:label "Cumberland"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00004> ;
+  ns0:index 3 ;
+  rdfs:comment """Cumberland is a Paleoindian culture. Subdivision value definitely used in the following DINAA partner states: Indiana
+""" .
+
+<http://opencontext.org/vocabularies/dinaa/00047>
+  a owl:Class ;
+  rdfs:label "Dalton"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00012> ;
+  ns0:index 0 ;
+  rdfs:comment "Dalton is a Late Paleoindian culture. Subdivision value definitely used in the following DINAA partner states: Indiana" .
+
+<http://opencontext.org/vocabularies/dinaa/00049>
+  a owl:Class ;
+  rdfs:label "Euroamerican"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00027> ;
+  ns0:index 4 ;
+  rdfs:comment """Euroamerican is a Historic cultural description. Subdivision value definitely used in the following DINAA partner states: Indiana
+""" .
+
+<http://opencontext.org/vocabularies/dinaa/00053>
+  a owl:Class ;
+  rdfs:label "Early Mississippian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00023> ;
+  ns0:index 0 .
+
+<http://opencontext.org/vocabularies/dinaa/00055>
+  a owl:Class ;
+  rdfs:label "Historic / Post-Contact Native American"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00027> ;
+  ns0:index 5 .
+
+<http://opencontext.org/vocabularies/dinaa/00056>
+  a owl:Class ;
+  rdfs:label "Historic Non-Native American"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00027> ;
+  ns0:index 6 .
+
+<http://opencontext.org/vocabularies/dinaa/00059>
+  a owl:Class ;
+  rdfs:label "Late Mississippian"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00023> ;
+  ns0:index 2 .
+
+<http://opencontext.org/vocabularies/dinaa/00063>
+  a owl:Class ;
+  rdfs:label "Uncategorized"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 9 .
+
+<http://opencontext.org/vocabularies/dinaa/00064>
+  a owl:Class ;
+  rdfs:label "Other"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00002> ;
+  ns0:index 8 ;
+  rdfs:comment "Uncategorized entries that are defined as 'Other' in the original source data and for which continuation of the 'Other' category is the most salient." .
+
+<http://opencontext.org/vocabularies/dinaa/00071>
+  a owl:Class ;
+  rdfs:label "Pre-Clovis"@en ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/dinaa/00004> ;
+  ns0:index 0 ;
+  rdfs:comment "Paleoindian cultures or periods asserted to be prior to the Clovis period."^^xsd:string .
+
+<http://www.cidoc-crm.org/cidoc-crm/E4_Period> a owl:Class .

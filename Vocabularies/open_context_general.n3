@@ -1,0 +1,635 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns0: <http://opencontext.org/vocabularies/oc-general/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<http://opencontext.org/vocabularies/oc-general>
+  a owl:Ontology ;
+  dc:title "Open Context Concepts"@en ;
+  rdfs:label "Open Context Concepts" ;
+  rdfs:comment "General concepts applied to all data published by Open Context" ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> .
+
+
+<http://opencontext.org/vocabularies/oc-general/location-precision-note>
+  a owl:AnnotationProperty, owl:ObjectProperty, owl:NamedIndividual ;
+  rdfs:label "Location precision note"@en ;
+  rdfs:comment "This property provides a verbal description or comment about the precision of the geospatial metadata provided for an item."^^xsd:string ;
+  rdfs:subPropertyOf rdfs:comment ;
+  skos:related <http://opencontext.org/vocabularies/oc-general/location-precision> .
+
+<http://opencontext.org/vocabularies/oc-general/reference-label>
+  a owl:AnnotationProperty, owl:ObjectProperty, owl:NamedIndividual ;
+  rdfs:label "Reference label"@en ;
+  rdfs:comment "This property labels an item that has geospatial or chronological metadata specified with the reference-uri property."^^xsd:string ;
+  rdfs:subPropertyOf rdfs:label ;
+  skos:related <http://opencontext.org/vocabularies/oc-general/reference-uri> .
+
+<http://opencontext.org/vocabularies/oc-general/location-note>
+  a owl:AnnotationProperty, owl:ObjectProperty ;
+  rdfs:label "Location note"@en ;
+  rdfs:comment "This property a verbal description of a geospatial feature associated with an item."^^xsd:string ;
+  rdfs:subPropertyOf rdfs:comment .
+
+<http://opencontext.org/vocabularies/oc-general/hasIcon>
+  a owl:AnnotationProperty ;
+  rdfs:label "Has Icon"@en ;
+  rdfs:subPropertyOf foaf:depiction .
+
+skos:closeMatch a owl:AnnotationProperty .
+<http://opencontext.org/vocabularies/oc-general/obsNote>
+  a owl:AnnotationProperty, owl:ObjectProperty ;
+  rdfs:label "Observation note"@en ;
+  rdfs:comment "This property a verbal description / comment about an observation event."^^xsd:string, "This property is a verbal description / comment about an observation event."^^xsd:string ;
+  rdfs:subPropertyOf rdfs:comment ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/observations> .
+
+<http://opencontext.org/vocabularies/oc-general/contains>
+  a owl:ObjectProperty ;
+  rdfs:label "Contains"@en ;
+  rdfs:comment "This property describes very general spatial or contextual \"containment\" relationships that describe how entities published by Open Context relate. In the sense defined here, containment relationships help organize entities into contextual relationships as they were observed during the process of discovery and description."^^xsd:string ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/contents> ;
+  rdfs:range <http://opencontext.org/vocabularies/oc-general/subjects> .
+
+<http://opencontext.org/vocabularies/oc-general/has-contents>
+  a owl:ObjectProperty ;
+  rdfs:label "Has contents"@en ;
+  rdfs:comment "This property indicates that an item contains child items in a containment hierarchy."^^xsd:string ;
+  rdfs:range <http://opencontext.org/vocabularies/oc-general/contents> ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/subjects> .
+
+<http://opencontext.org/vocabularies/oc-general/has-context-path>
+  a owl:ObjectProperty ;
+  rdfs:label "Has context path"@en ;
+  rdfs:comment "This property indicates that an item has items that contain it in a containment hierarchy."^^xsd:string ;
+  rdfs:range <http://opencontext.org/vocabularies/oc-general/contexts> ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/subjects> .
+
+<http://opencontext.org/vocabularies/oc-general/has-linked-context-path>
+  a owl:ObjectProperty ;
+  rdfs:label "Has linked context path"@en ;
+  rdfs:comment "This property indicates that an item is linked to a subjects item with a containment hierarchy."^^xsd:string ;
+  rdfs:range <http://opencontext.org/vocabularies/oc-general/contexts> ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/items> .
+
+<http://opencontext.org/vocabularies/oc-general/has-obs>
+  a owl:ObjectProperty ;
+  rdfs:label "Has observation"@en ;
+  rdfs:comment "This property indicates that an item has an associated observation event."^^xsd:string ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/items> ;
+  rdfs:range <http://opencontext.org/vocabularies/oc-general/observations> .
+
+<http://opencontext.org/vocabularies/oc-general/has-path-items>
+  a owl:ObjectProperty ;
+  rdfs:label "Has context path items"@en ;
+  rdfs:comment "This property identifies members of a containment hierarchy."^^xsd:string ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/contexts> ;
+  rdfs:range <http://opencontext.org/vocabularies/oc-general/subjects> .
+
+<http://opencontext.org/vocabularies/oc-general/has-technique>
+  a owl:ObjectProperty ;
+  rdfs:label "Has technique"@en ;
+  rdfs:comment "Identifies the technique and / or analytic devises used to make a measurement or descriptive classification."^^xsd:string .
+
+<http://opencontext.org/vocabularies/oc-general/location-precision>
+  a owl:ObjectProperty ;
+  rdfs:label "Location precision"@en ;
+  rdfs:comment "This property describes the precision of the geospatial metadata provided for an item as a 'zoom level'. A zero means that the precision was not intentially reduced. A positive integer means an intentional reduction in precision to a given zoom level. Reduced precision means that the geospatial information has sensitivity / security issues."^^xsd:string .
+
+<http://opencontext.org/vocabularies/oc-general/has-note>
+  a owl:ObjectProperty ;
+  rdfs:label "Has note"@en ;
+  rdfs:comment "This property is a verbal description / comment about an Open Context item."^^xsd:string .
+
+<http://opencontext.org/vocabularies/oc-general/obsStatus>
+  a owl:ObjectProperty ;
+  rdfs:label "Observation status"@en ;
+  rdfs:comment "This property indicates if an observation is still 'active' and valid, or if it is 'depricated' and no longer valid."^^xsd:string ;
+  rdfs:domain <http://opencontext.org/vocabularies/oc-general/observations> .
+
+<http://opencontext.org/vocabularies/oc-general/predType>
+  a owl:ObjectProperty ;
+  rdfs:label "Predicate type"@en ;
+  rdfs:comment "Indicates the type of predicate (a 'variable' for descriptive properties) or a 'link' to other Open Context media, subjects, persons, projects, or documents items."^^xsd:string ;
+  rdfs:subPropertyOf rdf:type .
+
+<http://opencontext.org/vocabularies/oc-general/reference-type>
+  a owl:ObjectProperty ;
+  rdfs:label "Reference type"@en ;
+  rdfs:comment "This property describes the source of geospatial or chronological metadata. If the source of the metadata was the item itself, the object of this property is 'specified'. If the source of the metadata was some other item, the object of this property is 'inferred', since the geospatial or chronological information was inferred through containment relationships."^^xsd:string .
+
+<http://opencontext.org/vocabularies/oc-general/reference-uri>
+  a owl:ObjectProperty ;
+  rdfs:label "Reference URI"@en ;
+  rdfs:comment "This property identifies an item that has geospatial or chronological metadata specified. This is useful, since many items have geospatial and chronological metadata not directly assigned, but provided through inference."^^xsd:string ;
+  rdfs:subPropertyOf dc:identifier .
+
+<http://opencontext.org/vocabularies/oc-general/slug>
+  a owl:ObjectProperty ;
+  rdfs:label "Slug"@en ;
+  rdfs:comment "A secondary identifier for an item, used to make more human-readable URLs, so it's easier to understand and debug requests made with Web services / APIs."^^xsd:string ;
+  rdfs:subPropertyOf dc:identifier .
+
+<http://opencontext.org/vocabularies/oc-general/sourceID>
+  a owl:ObjectProperty ;
+  rdfs:label "Source ID"@en ;
+  rdfs:comment "Identifies the data source (usually an imported data table processed in creating a record in Open Context). This is mainly indicated for Open Context's internal administrative and management purposes, and likely does not have much use for outside users of data published by Open Context."^^xsd:string ;
+  rdfs:subPropertyOf dc:identifier .
+
+bibo:status
+  a owl:ObjectProperty ;
+  rdfs:label "Status"@en .
+
+<http://erlangen-crm.org/current/E20_Biological_Object>
+  a owl:Class ;
+  owl:equivalentClass <http://opencontext.org/vocabularies/oc-general/cat-bio-subj-ecofact> .
+
+<http://erlangen-crm.org/current/E22_Man-Made_Object>
+  a owl:Class ;
+  owl:equivalentClass <http://opencontext.org/vocabularies/oc-general/cat-object> .
+
+<http://erlangen-crm.org/current/E27_Site>
+  a owl:Class ;
+  owl:equivalentClass <http://opencontext.org/vocabularies/oc-general/cat-site> .
+
+<http://erlangen-crm.org/current/E39_Actor>
+  a owl:Class ;
+  owl:equivalentClass <http://opencontext.org/vocabularies/oc-general/persons> .
+
+<http://erlangen-crm.org/current/E63_Beginning_of_Existence> a owl:Class, owl:NamedIndividual .
+<http://opencontext.org/vocabularies/oc-general/cat-object>
+  a owl:Class ;
+  rdfs:label "Object" ;
+  rdfs:subClassOf <http://opencontext.org/vocabularies/oc-general/subjects> ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/object.jpg"^^xsd:anyURI .
+
+ns0:cat-coin
+  a owl:Class ;
+  rdfs:label "Coin"@en ;
+  rdfs:subClassOf ns0:cat-object ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/coin.jpg"^^xsd:anyURI .
+
+ns0:cat-pottery
+  a owl:Class ;
+  rdfs:label "Pottery"@en ;
+  rdfs:subClassOf ns0:cat-object ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/ceramic.jpg"^^xsd:anyURI .
+
+ns0:cat-glass
+  a owl:Class ;
+  rdfs:label "Glass"@en ;
+  rdfs:subClassOf ns0:cat-object ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/glass.jpg"^^xsd:anyURI .
+
+ns0:cat-groundstone
+  a owl:Class ;
+  rdfs:label "Groundstone"@en ;
+  rdfs:subClassOf ns0:cat-object ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/groundstone.png"^^xsd:anyURI .
+
+ns0:cat-arch-element
+  a owl:Class ;
+  rdfs:label "Architectural Element"@en ;
+  rdfs:subClassOf ns0:cat-object ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/arch-element-gen.jpg"^^xsd:anyURI .
+
+ns0:cat-bio-subj-ecofact
+  a owl:Class ;
+  rdfs:label "Biological subject, Ecofact"@en ;
+  rdfs:subClassOf ns0:subjects ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/population.jpg"^^xsd:anyURI .
+
+ns0:cat-animal-bone
+  a owl:Class ;
+  rdfs:label "Animal Bone"@en ;
+  rdfs:subClassOf ns0:cat-bio-subj-ecofact ;
+  rdfs:comment "Animal bones, usually of the type described by zooarchaeologists. These may or may not have evidence for human modification."^^xsd:string ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/animal-bone.jpg"^^xsd:anyURI .
+
+ns0:cat-shell
+  a owl:Class ;
+  rdfs:label "Shell"@en ;
+  rdfs:subClassOf ns0:cat-bio-subj-ecofact ;
+  rdfs:comment "Mineral shell, usually from molluscs."^^xsd:string ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/shell.png"^^xsd:anyURI .
+
+ns0:cat-non-diag-bone
+  a owl:Class ;
+  rdfs:label "Non Diagnostic Bone"@en ;
+  rdfs:subClassOf ns0:cat-bio-subj-ecofact ;
+  rdfs:comment "Bone fragments that do not have detailed description or identification."^^xsd:string ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/animal-bone.jpg"^^xsd:anyURI .
+
+ns0:cat-human-bone
+  a owl:Class ;
+  rdfs:label "Human Bone"@en ;
+  rdfs:subClassOf ns0:cat-bio-subj-ecofact ;
+  rdfs:comment "Bone remains of human beings."^^xsd:string ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/human-bone.jpg"^^xsd:anyURI .
+
+ns0:cat-plant-remains
+  a owl:Class ;
+  rdfs:label "Plant remains"@en ;
+  rdfs:subClassOf ns0:cat-bio-subj-ecofact ;
+  rdfs:comment "Any sort of botanical remain"^^xsd:string ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/plant.jpg"^^xsd:anyURI .
+
+ns0:cat-loc-or-context
+  a owl:Class ;
+  rdfs:label "Location or Context"@en ;
+  rdfs:subClassOf ns0:subjects ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/operation-area.jpg"^^xsd:anyURI ;
+  skos:closeMatch "http://erlangen-crm.org/110404/E53_Place"^^xsd:anyURI .
+
+ns0:cat-survey-unit
+  a owl:Class ;
+  rdfs:label "Survey Unit"@en ;
+  rdfs:subClassOf ns0:cat-loc-or-context, <http://purl.org/crmeh#EHE0003_AreaOfInvestigation> ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/operation-area.jpg"^^xsd:anyURI .
+
+ns0:cat-site
+  a owl:Class ;
+  rdfs:label "Site"@en ;
+  rdfs:subClassOf ns0:cat-loc-or-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/site.jpg"^^xsd:anyURI .
+
+ns0:cat-site-area
+  a owl:Class ;
+  rdfs:label "Site Area"@en ;
+  owl:equivalentClass <http://purl.org/crmeh#EHE0004_SiteSubDivision> ;
+  rdfs:subClassOf ns0:cat-loc-or-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/operation-area.jpg"^^xsd:anyURI .
+
+ns0:cat-context
+  a owl:Class ;
+  rdfs:label "Context"@en ;
+  owl:equivalentClass <http://purl.org/crmeh#EHE0007_Context> ;
+  rdfs:subClassOf ns0:cat-loc-or-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/locus-lot.jpg"^^xsd:anyURI .
+
+ns0:cat-feature
+  a owl:Class ;
+  rdfs:label "Feature"@en ;
+  owl:equivalentClass <http://purl.org/crmeh#EHE0074_IdentifiedFeature> ;
+  rdfs:subClassOf ns0:cat-loc-or-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/feature.jpg"^^xsd:anyURI .
+
+ns0:cat-structure
+  a owl:Class ;
+  rdfs:label "Structure"@en ;
+  rdfs:subClassOf ns0:cat-loc-or-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/building-space.jpg"^^xsd:anyURI ;
+  rdfs:comment "A collection of features and contexts interpreted to represent a unit of architecture."^^xsd:string .
+
+ns0:cat-space
+  a owl:Class ;
+  rdfs:label "Space"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/building-space.jpg"^^xsd:anyURI ;
+  rdfs:comment "A grouping of contexts interpreted to represent a unit of space (activity area, etc.), often infered by association with architectural features."^^xsd:string .
+
+ns0:cat-exc-unit
+  a owl:Class ;
+  rdfs:label "Excavation Unit"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/ex-square.jpg"^^xsd:anyURI .
+
+ns0:cat-locus
+  a owl:Class ;
+  rdfs:label "Locus"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/locus-lot.jpg"^^xsd:anyURI .
+
+ns0:cat-lot
+  a owl:Class ;
+  rdfs:label "Lot"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/locus-lot.jpg"^^xsd:anyURI .
+
+ns0:cat-basket
+  a owl:Class ;
+  rdfs:label "Basket"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/locus-lot.jpg"^^xsd:anyURI .
+
+ns0:cat-area
+  a owl:Class ;
+  rdfs:label "Area"@en ;
+  rdfs:subClassOf ns0:cat-site-area ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/operation-area.jpg"^^xsd:anyURI .
+
+ns0:cat-trench
+  a owl:Class ;
+  rdfs:label "Trench"@en ;
+  rdfs:subClassOf ns0:cat-site-area ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/ex-square.jpg"^^xsd:anyURI .
+
+ns0:cat-operation
+  a owl:Class ;
+  rdfs:label "Operation"@en ;
+  rdfs:subClassOf ns0:cat-site-area ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/operation-area.jpg"^^xsd:anyURI .
+
+ns0:cat-field-proj
+  a owl:Class ;
+  rdfs:label "Field Project"@en ;
+  rdfs:subClassOf ns0:cat-site-area ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/operation-area.jpg"^^xsd:anyURI .
+
+ns0:cat-square
+  a owl:Class ;
+  rdfs:label "Square"@en ;
+  rdfs:subClassOf ns0:cat-site-area ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/ex-square.jpg"^^xsd:anyURI .
+
+ns0:cat-unit
+  a owl:Class ;
+  rdfs:label "Unit"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/ex-square.jpg"^^xsd:anyURI .
+
+ns0:cat-sequence
+  a owl:Class ;
+  rdfs:label "Sequence"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/sample.jpg"^^xsd:anyURI .
+
+ns0:cat-human-subj
+  a owl:Class ;
+  rdfs:label "Human Subject"@en ;
+  rdfs:subClassOf ns0:cat-bio-subj-ecofact ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/patient.jpg"^^xsd:anyURI .
+
+ns0:cat-stratum
+  a owl:Class ;
+  rdfs:label "Stratum"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/stratum.jpg"^^xsd:anyURI .
+
+ns0:cat-phase
+  a owl:Class ;
+  rdfs:label "Phase"@en ;
+  rdfs:subClassOf ns0:cat-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/stratum.jpg"^^xsd:anyURI .
+
+ns0:cat-hospital
+  a owl:Class ;
+  rdfs:label "Hospital"@en ;
+  rdfs:subClassOf ns0:cat-loc-or-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/patient.jpg"^^xsd:anyURI .
+
+ns0:cat-mound
+  a owl:Class ;
+  rdfs:label "Mound"@en ;
+  rdfs:subClassOf ns0:cat-site-area ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/mound.jpg"^^xsd:anyURI .
+
+ns0:cat-sculpture
+  a owl:Class ;
+  rdfs:label "Sculpture"@en ;
+  rdfs:subClassOf ns0:cat-object ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/arch-element.jpg"^^xsd:anyURI .
+
+ns0:cat-sample
+  a owl:Class ;
+  rdfs:label "Sample"@en ;
+  rdfs:subClassOf ns0:cat-sample-col ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/sample.jpg"^^xsd:anyURI .
+
+ns0:cat-bulk-ceramic
+  a owl:Class ;
+  rdfs:label "Bulk Ceramic"@en ;
+  rdfs:subClassOf ns0:cat-sample-col ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/sample.jpg"^^xsd:anyURI .
+
+ns0:cat-bulk-bone
+  a owl:Class ;
+  rdfs:label "Bulk Bone"@en ;
+  rdfs:subClassOf ns0:cat-sample-col ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/sample.jpg"^^xsd:anyURI .
+
+ns0:cat-bulk-lithic
+  a owl:Class ;
+  rdfs:label "Bulk Lithic"@en ;
+  rdfs:subClassOf ns0:cat-sample-col ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/sample.jpg"^^xsd:anyURI .
+
+ns0:cat-sample-col
+  a owl:Class ;
+  rdfs:label "Sample, Collection, or Aggregation"@en ;
+  rdfs:subClassOf ns0:subjects ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/sample.jpg"^^xsd:anyURI .
+
+ns0:cat-ref-col
+  a owl:Class ;
+  rdfs:label "Reference Collection"@en ;
+  rdfs:subClassOf ns0:cat-sample-col ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/ref-collection.jpg"^^xsd:anyURI .
+
+ns0:cat-region
+  a owl:Class ;
+  rdfs:label "Region"@en ;
+  rdfs:subClassOf ns0:cat-loc-or-context ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/region.jpg"^^xsd:anyURI .
+
+ns0:cat-modification
+  a owl:Class ;
+  rdfs:label "Modification Feature"@en ;
+  rdfs:subClassOf ns0:subjects ;
+  rdfs:comment "An identified modification on another portable item (ecofact, artifact) interperated to result from human action."^^xsd:string ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/modification-feature.jpg"^^xsd:anyURI ;
+  skos:closeMatch "http://erlangen-crm.org/current/E25_Man-Made_Feature"^^xsd:anyURI .
+
+ns0:cat-stela
+  a owl:Class ;
+  rdfs:label "stela"@en ;
+  rdfs:subClassOf ns0:feature ;
+  rdfs:comment "Upright stone slab, may be a commemorative marker with or without decorations and texts."^^xsd:string ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/stela.jpg"^^xsd:anyURI ;
+  skos:closeMatch "http://vocab.getty.edu/aat/300007023"^^xsd:anyURI .
+
+ns0:cat-figurine
+  a owl:Class ;
+  rdfs:label "Figurine"@en ;
+  rdfs:subClassOf ns0:cat-object ;
+  ns0:hasIcon "http://artiraq.org/static/oc/icons/figurine.jpg"^^xsd:anyURI .
+
+ns0:contents
+  a owl:Class ;
+  rdfs:label "Contents"^^xsd:string ;
+  rdfs:subClassOf ns0:item-parts ;
+  rdfs:comment "A content item has a list of child items contained in a hierarchy. "^^xsd:string .
+
+ns0:contexts
+  a owl:Class ;
+  rdfs:label "Contexts"^^xsd:string ;
+  rdfs:subClassOf ns0:item-parts ;
+  rdfs:comment "A context has information situating an item in a hierarchy of other items that contain it. "^^xsd:string .
+
+ns0:discovery-location
+  a owl:Class ;
+  rdfs:label "Discovery location"@en ;
+  rdfs:subClassOf ns0:item-event-types ;
+  rdfs:comment "The location for where an item was discovered or observed."^^xsd:string .
+
+ns0:documents
+  a owl:Class ;
+  rdfs:label "Documents"@en ;
+  rdfs:subClassOf ns0:items ;
+  rdfs:comment "These are textual documents that help make up a body of documentation for a given project or collection. They typically relate to and help describe subjects, people, or a project. They differ from media items in that they are not stored as outside binary files, but are simply plain or HTML text documents."^^xsd:string .
+
+ns0:edit-level-0
+  a owl:Class ;
+  rdfs:label "In preparation, Forthcoming"^^rdfs:Literal ;
+  rdfs:subClassOf <http://purl.org/ontology/bibo/status/forthcoming> ;
+  rdfs:comment "The dataset is still in preparation and in a draft stage."^^xsd:string .
+
+ns0:edit-level-1
+  a owl:Class ;
+  rdfs:label "Demonstration, Minimal editorial acceptance"^^rdfs:Literal ;
+  rdfs:subClassOf <http://purl.org/ontology/bibo/status/nonPeerReviewed> ;
+  rdfs:comment "Open Context's managing editors accepted a project's dataset even though it lacked important documentation and supplemental information. Primarily, these project datasets serve as demonstrations or proof-of-concept applications of Open Context, rather than for research purposes."^^xsd:string .
+
+ns0:edit-level-2
+  a owl:Class ;
+  rdfs:label "Minimal editorial acceptance"^^rdfs:Literal ;
+  rdfs:subClassOf <http://purl.org/ontology/bibo/status/nonPeerReviewed> ;
+  rdfs:comment "Open Context's managing editors accepted a project's dataset even though it may lack important documentation and supplemental information. In some cases, the primary value of the project may be to serve instructional or public outreach goals, rather than research uses."^^xsd:string .
+
+ns0:edit-level-3
+  a owl:Class ;
+  rdfs:label "Managing editor reviewed"^^rdfs:Literal ;
+  rdfs:subClassOf <http://purl.org/ontology/bibo/status/peerReviewed> ;
+  rdfs:comment "Open Context's managing editors closely reviewed and edited a project."^^xsd:string .
+
+ns0:edit-level-4
+  a owl:Class ;
+  rdfs:label "Editorial board reviewed"^^rdfs:Literal ;
+  rdfs:subClassOf <http://purl.org/ontology/bibo/status/peerReviewed> ;
+  rdfs:comment "Open Context's managing editors and members of the Editorial Board reviewed the project."^^xsd:string .
+
+ns0:edit-level-5
+  a owl:Class ;
+  rdfs:label "Peer-reviewed"^^rdfs:Literal ;
+  rdfs:subClassOf <http://purl.org/ontology/bibo/status/peerReviewed> ;
+  rdfs:comment "In addition to seeing reviews and edits from the managing editor and the Editorial Board, at least two external experts in the subject area reviewed the project."^^xsd:string .
+
+ns0:editorial-status
+  a owl:Class ;
+  rdfs:label "Editorial status"^^rdfs:Literal ;
+  rdfs:comment "Open Context indicates the editorial status of projects using a scale of one to five. Editorial status in inherited to every record belonging to a project. The editorial status applies to a project as a whole (not to individual records within a project)."^^rdfs:Literal .
+
+ns0:formation-use-life
+  a owl:Class, owl:NamedIndividual ;
+  rdfs:label "Formation, use, or life"@en ;
+  rdfs:subClassOf ns0:item-event-types ;
+  rdfs:comment "The time span during which an item was formed, was used, or was alive."^^xsd:string ;
+  skos:related <http://erlangen-crm.org/current/E63_Beginning_of_Existence> .
+
+ns0:image
+  a owl:Class ;
+  rdfs:label "Image"^^xsd:anyURI ;
+  rdfs:subClassOf ns0:media ;
+  rdfs:comment "A representation including: photographs, drawings, or other two dimensional images "^^xsd:string .
+
+ns0:document-file
+  a owl:Class ;
+  rdfs:label "Document File"^^xsd:anyURI ;
+  rdfs:subClassOf ns0:media ;
+  rdfs:comment "A binary file (PDF, Word, etc.) that may contain text and other media along with stylistic layout information."^^xsd:string .
+
+ns0:3d-model
+  a owl:Class ;
+  rdfs:label "3D Model"^^xsd:anyURI ;
+  rdfs:subClassOf ns0:media ;
+  rdfs:comment "A mathematical representation of the three-dimensional surfaces of objects or features. These may include image files used as textures."^^xsd:string .
+
+ns0:gis-vector-file
+  a owl:Class ;
+  rdfs:label "GIS Vector File"^^xsd:anyURI ;
+  rdfs:subClassOf ns0:media ;
+  rdfs:comment "A file in a format designed for representing geographical features, typically along with some non-spatial attributes."^^xsd:string .
+
+ns0:item-event-types
+  a owl:Class ;
+  rdfs:label "Item event types"^^rdfs:Literal ;
+  rdfs:comment "GeoJSON-LD defines 'event-like' features situated in space and time. Subclasses of Item event types provide additional information describing the event-like features in Open Context GeoJSON-LD documents."^^xsd:string .
+
+ns0:item-parts
+  a owl:Class ;
+  rdfs:label "Item parts"^^rdfs:Literal ;
+  rdfs:comment "Parts of an item that bundle different kinds of relationships and descriptions."^^xsd:string .
+
+ns0:items
+  a owl:Class ;
+  rdfs:label "Open Context Items"^^rdfs:Literal ;
+  rdfs:comment "An information resource published by Open Context and assigned a URI for identification and retrieval."^^xsd:string .
+
+ns0:links
+  a owl:Class ;
+  rdfs:label "Links"^^xsd:string ;
+  rdfs:subClassOf ns0:predicates ;
+  rdfs:comment "A type of predicate used to assert some sort of relationship to other Open Context subjects, media, documents, projects, or persons items."^^xsd:string .
+
+ns0:media
+  a owl:Class ;
+  rdfs:label "Media"@en ;
+  rdfs:subClassOf ns0:items ;
+  rdfs:comment "These are media files that help make up a body of documentation for a given project or collection. They typically relate to and help describe subjects, people, or a project. Examples include: image files, PDF documents, videos, 3-D scans, etc."^^xsd:string .
+
+ns0:observations
+  a owl:Class ;
+  rdfs:label "Observations"^^xsd:string ;
+  rdfs:subClassOf ns0:item-parts ;
+  rdfs:comment "An observation is a bundle of descriptive assertions made about an entity published by Open Context. The bundle of observations should be made by some agent, but sometimes this is not going to be known. "^^xsd:string ;
+  skos:closeMatch "http://erlangen-crm.org/current/E13_Attribute_Assignment"^^xsd:anyURI .
+
+ns0:persons
+  a owl:Class ;
+  rdfs:label "Persons or Organizations"@en ;
+  owl:equivalentClass foaf:Agent ;
+  rdfs:subClassOf ns0:items ;
+  rdfs:comment "Persons and organizations represent the people and institutions that participated in a project. They are responsible for creating, editing, curating, analyzing, and reporting data published in Open Context."^^xsd:string .
+
+ns0:predicates
+  a owl:Class ;
+  rdfs:label "Predicates or properties"@en ;
+  owl:equivalentClass rdf:Property ;
+  rdfs:subClassOf ns0:items ;
+  rdfs:comment "Predicates / properteries describe subjects, people, media, etc. according to a (sometimes loosely, and informally defined) descriptive schemes created by data contributors / authors. Each predicate or property is unique within the context of a given project. Occationally, predicates will be organized into hierarchies using the SKOS or RDFS vocabularies."^^xsd:string .
+
+ns0:projects
+  a owl:Class ;
+  rdfs:label "Projects or Collections"@en ;
+  rdfs:subClassOf ns0:items ;
+  rdfs:comment "Projects represent a specific study or research effort to collect a body of documentation. They can be an archaeological excavation or survey, an ecological survey, a description of a museum collection, or even a public health study of disease incidences. All projects and collections must identify an institution or person responsible for collecting and publishing data."^^xsd:string .
+
+ns0:subjects
+  a owl:Class ;
+  rdfs:label "Subjects"@en ;
+  rdfs:subClassOf ns0:items ;
+  rdfs:comment "The primary \"subjects\" of observations in Open Context. These are the primary entities of phenomena described by researchers."^^xsd:string .
+
+ns0:types
+  a owl:Class ;
+  rdfs:label "Descriptive types"@en ;
+  rdfs:subClassOf ns0:items, skos:Concept ;
+  rdfs:comment "Types describe subjects, people, media, etc. according to a (sometimes loosely, and informally defined) controlled vocabulary created by data contributors / authors. Each descriptive type is unique within the context of a given project. Occationally, types will be organized into hierarchies using the SKOS or RDFS vocabularies."^^xsd:string .
+
+ns0:tables
+  a owl:Class ;
+  rdfs:label "Tables"@en ;
+  rdfs:subClassOf ns0:items ;
+  rdfs:comment "Tables list records of \"subjects\" items (in rows) described with different attributes (in columns) in a tabular stucture, especially for CSV output."^^xsd:string .
+
+ns0:variables
+  a owl:Class ;
+  rdfs:label "Variables"^^rdfs:Literal ;
+  rdfs:subClassOf ns0:predicates ;
+  rdfs:comment "A type of predicate that is used to provide description to an item, rather than assert some sort of linking relationship to other items. "^^xsd:string .
+
